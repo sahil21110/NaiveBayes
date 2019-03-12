@@ -1,2 +1,2 @@
 # NaiveBayes
-Naive Bayes
+Simple Naive Bayes didgit classifier.
