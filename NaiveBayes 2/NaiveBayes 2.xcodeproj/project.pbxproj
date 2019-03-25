@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5B3D03FE2249466F0095371F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D03FD2249466F0095371F /* main.cpp */; };
-		5B3D0406224946B00095371F /* Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D0404224946B00095371F /* Number.cpp */; };
+		5B3D0406224946B00095371F /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D0404224946B00095371F /* Image.cpp */; };
+		5B3D040D22495CB00095371F /* Classifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D040B22495CB00095371F /* Classifier.cpp */; };
+		5B3D041022495E2E0095371F /* NaiveBayesModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D040E22495E2E0095371F /* NaiveBayesModel.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +28,16 @@
 /* Begin PBXFileReference section */
 		5B3D03FA2249466F0095371F /* NaiveBayes 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "NaiveBayes 2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3D03FD2249466F0095371F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		5B3D0404224946B00095371F /* Number.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Number.cpp; sourceTree = "<group>"; };
-		5B3D0405224946B00095371F /* Number.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Number.hpp; sourceTree = "<group>"; };
+		5B3D0404224946B00095371F /* Image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
+		5B3D0405224946B00095371F /* Image.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Image.hpp; sourceTree = "<group>"; };
+		5B3D0407224949430095371F /* testimages.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testimages.txt; sourceTree = "<group>"; };
+		5B3D0408224949430095371F /* testlabels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testlabels.txt; sourceTree = "<group>"; };
+		5B3D0409224949430095371F /* trainingimages.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trainingimages.txt; sourceTree = "<group>"; };
+		5B3D040A224949430095371F /* traininglabels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = traininglabels.txt; sourceTree = "<group>"; };
+		5B3D040B22495CB00095371F /* Classifier.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Classifier.cpp; sourceTree = "<group>"; };
+		5B3D040C22495CB00095371F /* Classifier.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Classifier.hpp; sourceTree = "<group>"; };
+		5B3D040E22495E2E0095371F /* NaiveBayesModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NaiveBayesModel.cpp; sourceTree = "<group>"; };
+		5B3D040F22495E2E0095371F /* NaiveBayesModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NaiveBayesModel.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +54,7 @@
 		5B3D03F12249466F0095371F = {
 			isa = PBXGroup;
 			children = (
-				5B3D03FC2249466F0095371F /* NaiveBayes 2 */,
+				5B3D03FC2249466F0095371F /* src */,
 				5B3D03FB2249466F0095371F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,14 +67,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5B3D03FC2249466F0095371F /* NaiveBayes 2 */ = {
+		5B3D03FC2249466F0095371F /* src */ = {
 			isa = PBXGroup;
 			children = (
+				5B3D0407224949430095371F /* testimages.txt */,
+				5B3D0408224949430095371F /* testlabels.txt */,
+				5B3D0409224949430095371F /* trainingimages.txt */,
+				5B3D040A224949430095371F /* traininglabels.txt */,
 				5B3D03FD2249466F0095371F /* main.cpp */,
-				5B3D0404224946B00095371F /* Number.cpp */,
-				5B3D0405224946B00095371F /* Number.hpp */,
+				5B3D0404224946B00095371F /* Image.cpp */,
+				5B3D0405224946B00095371F /* Image.hpp */,
+				5B3D040B22495CB00095371F /* Classifier.cpp */,
+				5B3D040C22495CB00095371F /* Classifier.hpp */,
+				5B3D040E22495E2E0095371F /* NaiveBayesModel.cpp */,
+				5B3D040F22495E2E0095371F /* NaiveBayesModel.hpp */,
 			);
-			path = "NaiveBayes 2";
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3D0406224946B00095371F /* Number.cpp in Sources */,
+				5B3D041022495E2E0095371F /* NaiveBayesModel.cpp in Sources */,
+				5B3D0406224946B00095371F /* Image.cpp in Sources */,
 				5B3D03FE2249466F0095371F /* main.cpp in Sources */,
+				5B3D040D22495CB00095371F /* Classifier.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

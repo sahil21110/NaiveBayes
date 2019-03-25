@@ -8,17 +8,15 @@
 
 #ifndef Number_hpp
 #define Number_hpp
-
+#include <vector>
 #include <stdio.h>
 
-class Number {
+struct Image{
     
 public:
-    Number();
-    //int** pixels = new int*[28];
-    
-    
-    static int const kVector_size = 28;
+    Image();
+    std::vector<std::vector<int>> pixels;
+    int const kVector_size = 28;
     int label;
     static void initializeVector();
 };
