@@ -8,7 +8,16 @@
 
 #ifndef Classifier_hpp
 #define Classifier_hpp
-
+#include <vector>
 #include <stdio.h>
+class Classifier (
+                
+
+
+);
+ //std::vector<double> posteriorprobs;
+                  
+                  
+
 
 #endif /* Classifier_hpp */
