@@ -15,10 +15,11 @@ struct Image{
     
 public:
     Image();
-    std::vector<std::vector<int>> pixels;
+    std::vector<std::vector<char>> pixels;
     int const kVector_size = 28;
     int label;
     static void initializeVector();
+    std::vector<double> classfication;
 };
 
 #endif /* Number_hpp */

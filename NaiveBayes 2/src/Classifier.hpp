@@ -10,11 +10,22 @@
 #define Classifier_hpp
 #include <vector>
 #include <stdio.h>
-class Classifier (
-                
+#include "Image.hpp"
+class Classifier {
+public:
+    void ClassifyImages();
+    std::vector<double> posterior_probabilties;
+    std::vector<Image> testImages;
+    void ComputeposteriorProbabilities(std::vector<std::vector<std::vector<std::vector<double>>>> some);
+    void storeImages();
+    
+    // void ClassifyImages();
+    
+                  
 
 
-);
+
+};
  //std::vector<double> posteriorprobs;
                   
                   

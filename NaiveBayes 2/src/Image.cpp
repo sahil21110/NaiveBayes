@@ -9,6 +9,6 @@
 #include "Image.hpp"
 
 Image::Image(){
-    std::vector<std::vector<int>> temp(28, std::vector<int>(28));
+    std::vector<std::vector<char>> temp(28, std::vector<char>(28));
     pixels = temp;
 }

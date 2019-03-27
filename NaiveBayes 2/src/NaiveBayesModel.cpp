@@ -25,10 +25,10 @@ void NaiveBayesModel::computeThevalues(std::vector<Image> &refforvect)  {
         int label = refforvect[i].label;
         for (int j = 0; j < refforvect[i].pixels.size(); j++) {
             for (int q = 0; q <  refforvect[i].pixels[j].size(); q++) {
-                if (refforvect[i].pixels[j][q] == '#' || refforvect[i].pixels[j][q] == '*') {
+                if (refforvect[i].pixels[j][q] == true) {
                     count[j][q][label][1]++;
                 }
-                if (refforvect[i].pixels[j][q] == ' ') {
+                if (refforvect[i].pixels[j][q] == false) {
                     count[j][q][label][0]++;
                 }
             }
