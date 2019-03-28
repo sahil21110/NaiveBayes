@@ -13,20 +13,23 @@
 #include "Image.hpp"
 class Classifier {
 public:
+    //Method to classify images.
     void ClassifyImages();
+    
+    //Vector to store the posterior probabilities
     std::vector<double> posterior_probabilties;
+    
+    //Vector to store the test images
     std::vector<Image> testImages;
+    
+    //Method to store the probabilities that a given image belongs to a class.
     void ComputeposteriorProbabilities(std::vector<std::vector<std::vector<std::vector<double>>>> some);
+   
+    //Method to store the images in the vector.
     void storeImages();
     
-    // void ClassifyImages();
-    
-                  
-
-
-
 };
- //std::vector<double> posteriorprobs;
+
                   
                   
 

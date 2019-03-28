@@ -31,39 +31,43 @@ void  Classifier::ComputeposteriorProbabilities(std::vector<std::vector<std::vec
 }
 
 void Classifier::storeImages() {
-    
-    std::ifstream test_labels;
     std::ifstream testing_file;
-    
-    test_labels.open("/Users/sahil_21/Downloads/traininglabels.txt");
-    testing_file.open("/Users/sahil_21/Downloads/trainingimages.txt");
+    testing_file.open("/Users/sahil_21/Downloads/testimages.txt");
     
     
     std::string for_storage;
     
-    
-    while (testing_file.eof()) {
-        while (getline(testing_file, for_storage)) {
-            int i = 0;
-            for (int j = 0; j < testImages.size(); i++) {
-                for (int p = 0; p < testImages[j].pixels.size(); p++) {
-                    for (int m = 0; m < testImages[j].pixels[m].size(); m++) {
-                        if (for_storage[m] == ' ') {
-                            testImages[j].pixels[p][m] = false;
-                        }
-                        if (for_storage[m] == '#' || for_storage[m] == '*') {
-                            testImages[j].pixels[p][m] = true;
-                            
-                        }
-                        
-                    }
+    int count = 1;
+    int i = 0;
+    while (!testing_file.eof()) {
+        
+        //std::cout<< "inner loop";
+        for (int p = 0; p < testImages[i].pixels.size(); p++) {
+            getline(testing_file, for_storage);
+            //std::cout<<for_storage;
+            //std::cout<<std::endl;
+            for (int m = 0; m < testImages[i].pixels[p].size(); m++) {
+                if (for_storage[m] == ' ') {
+                    testImages[i].pixels[p][m] = ' ' ;
+                    //std::cout<<training_data[i].pixels[p][m];
+                }
+                if (for_storage[m] == '#' || for_storage[m] == '+') {
+                    testImages[i].pixels[p][m] = '#';
+                    //std::cout<<training_data[i].pixels[p][m];
                     
                 }
                 
             }
+            //std::cout<<std::endl;
+            
             
         }
         
+        
+        if (count % 28 == 0) {
+            i++;
+        }
+        count ++;
     }
     
 }

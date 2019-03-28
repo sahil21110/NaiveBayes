@@ -8,7 +8,10 @@
 
 #ifndef ConfusionMatrix_hpp
 #define ConfusionMatrix_hpp
-
+#include <vector>
 #include <stdio.h>
+
+
+
 
 #endif /* ConfusionMatrix_hpp */
